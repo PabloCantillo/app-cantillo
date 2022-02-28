@@ -1,0 +1,10 @@
+* {
+    background-color: aquamarine;
+    margin: 1px;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+html , body , #root {
+    height: 100vh;
+}
