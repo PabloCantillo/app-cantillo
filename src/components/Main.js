@@ -1,31 +1,87 @@
-import {useState} from "react"
+import { useState, useEffect } from "react"
+import Contador from "./Contador";
 
+let productosIniciales = [
+    {
+        id: 1,
+        nombre: "Ray-ban Aviator",
+        precio: 24000
+    },
+    {
+        id: 2,
+        nombre: "Carrera Black",
+        precio: 15000
+    },
+    {
+        id: 3,
+        nombre: "Oakley Anorak",
+        precio: 17000
+    },
+    {
+        id: 4,
+        nombre: "Ray-Ban ClubMaster",
+        precio: 22000
+    },
+    {
+        id: 5,
+        nombre: "Vulk Wildy Denim",
+        precio: 13000
+    },
+    {
+        id: 6,
+        nombre: "Tommy Hilfiger Ruthenium",
+        precio: 15000
+    }
+]
 
 const Main = (props) => {
+
+    const [loading, setLoading] = useState(true)
+    const [productos, setProductos] = useState([])
+
     
-    const [contador, setContador] = useState(props.initial)
+    useEffect(()=>{
+        
+        const promesa = new Promise((res,rej)=>{
+            setTimeout(()=>{
+                res(productosIniciales)
+            },3000)
+        })
 
-    const handleClick = () => {
-         setContador(contador + 1)
-     }
- 
-     const restar = () => {
-         setContador(contador - 1)
-     }
- 
-     const resetear = () => {
-         setContador(0)
-     }
 
-     return (
+        promesa
+        .then((respuestaDeLaApi)=>{
+            setProductos(productosIniciales)
+        })
+        .catch((errorDeLaApi)=>{
+            console.log(errorDeLaApi)
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+        
+        
+        
+
+    })
+
+    console.log(productos)
+
+    return (
         <main className="container">
             <h2>Bienvenido {props.nombre} {props.apellido}!</h2>
-            <p>Esto es una prueba del contador del sitio. Muchas gracias por utilizarlo. : {contador}</p>
-            <button onClick={handleClick}>aumentar</button>
-            <button onClick={resetear}>resetear</button>
-            <button onClick={restar}>restar</button>
+            <img src="/imagenes/logo192.png" />
+            <p>La cantidad de productos es : 0</p>
+            <p>{loading ? "Cargando..." : "Ya tenes los productos"}</p>
+            <ul>
+                {productos.map((producto,indice)=>{
+                    return <li>{producto.nombre}</li>
+                })}
+            </ul>
+            <Contador />
         </main>
     );
 }
+
 
 export default Main;

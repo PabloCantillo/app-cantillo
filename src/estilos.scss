@@ -1,4 +1,4 @@
-$colorPrimario: rgb(12, 207, 12) ;
+$colorPrimario: rgb(1, 165, 1) ;
 
 * {
     margin: 1px;
@@ -36,6 +36,7 @@ body,
 
 main {
     flex-grow: 1;
+    padding: 1rem;
 }
 
 footer {
