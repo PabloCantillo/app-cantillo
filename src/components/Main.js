@@ -16,7 +16,7 @@ const Main = (props) => {
                 <Route path="/" element={<ItemListContainer/>}/>
                 <Route path="/tipo/:id" element={<ItemListContainer/>}/>
                 <Route path="/carrito" element={<Carrito/>}/>
-                <Route path="/pokemon/:id" element={<ItemDetailContainer/>}/>
+                <Route path="/breeds/:id" element={<ItemDetailContainer/>}/>
             </Routes>
         </main>
     );
