@@ -7,7 +7,7 @@ export const NavBar= () => {
     return (
   
       <header>
-         <<Navbar bg="primary" variant="dark"> >
+         <Navbar bg="primary" expand="lg" variant='dark' >
              <Container fluid>
               <Link to="/"><Navbar.Brand>Óptica Cantillo</Navbar.Brand></Link>
                <Navbar.Toggle aria-controls="navbarScroll" />
