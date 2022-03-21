@@ -1,22 +1,42 @@
-import { useState , useEffect } from "react"
+import { useState } from "react"
+import {Button} from "react-bootstrap";
 
-const Contador = () => {
+
+    const ItemCount = (props) => {
+
+        const [contador, setContador] = useState(props.init)
+    
+        const sumar = () => {
+    
+            if(contador < props.stock){
+                setContador(contador + 1) 
+            }
+        }
+    
+        const restar = () => {
+            
+            if( contador > 1){
+                setContador(contador - 1)
+            }
+        }
         
-    let [dark,setDark] = useState(false)
+        const addToCart = () => {
+            setContador(props.init)
+            props.onAdd(contador)
+            }
     
-    const toggleDarkMode = () => {
-        setDark(!dark)
-    }
-    
-    
-    return (
-        <div>
-            <h1>Contador</h1>
-            <p>El tema del sitio es : {dark.toString()}</p>
-            <p>Esto es una prueba del contador del sitio. Muchas gracias por utilizarlo. : 0</p>
-            <button onClick={toggleDarkMode}>toggle dark mode</button>
-        </div>
-    )
-}
+        return (
+            <div>
+                <h3>{props.name}</h3>
+                <h6>Nuestro stock es: {props.stock}</h6>
+                <Button variant="success" onClick={sumar}>+</Button>{' '}
+                <span init={props.init}>{contador}</span>
+                <Button variant="danger" onClick={restar}>-</Button>
+                <div>
+                   <Button variant="primary" onClick={addToCart}>Añadir al carrito</Button>{' '}
+                </div>
+            </div>
+        )
+}    
 
-export default Contador
+export default ItemCount

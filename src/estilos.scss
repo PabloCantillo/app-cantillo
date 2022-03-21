@@ -17,60 +17,60 @@ body,
     flex-direction: column;
 }
 
-#main-header {
-    background-color: $colorPrimario;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+// #main-header {
+//     background-color: $colorPrimario;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding: 0.5rem 1rem;
+//     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
     
-    > a  {
-        color: white;
-        text-decoration: none;
-    }
+//     > a  {
+//         color: white;
+//         text-decoration: none;
+//     }
 
-    nav {
-        a {
-            color: white;
-            text-decoration: none;
-            margin-left: 1rem;
+//     nav {
+//         a {
+//             color: white;
+//             text-decoration: none;
+//             margin-left: 1rem;
 
-            &:before {
-                content : "[";
-                color: white;
-                position: relative;
-                left: 10px;
-                opacity: 0;
-                transition: all 0.5s ease;
-            }
+//             &:before {
+//                 content : "[";
+//                 color: white;
+//                 position: relative;
+//                 left: 10px;
+//                 opacity: 0;
+//                 transition: all 0.5s ease;
+//             }
 
-            &:after {
-                content : "]";
-                color: white;
-                position: relative;
-                right: 10px;
-                opacity: 0;
-                transition: all 0.5s ease;
-            }
+//             &:after {
+//                 content : "]";
+//                 color: white;
+//                 position: relative;
+//                 right: 10px;
+//                 opacity: 0;
+//                 transition: all 0.5s ease;
+//             }
 
-            &.active::after {
-                opacity: 1;
-                right: -10px;
-            }
+//             &.active::after {
+//                 opacity: 1;
+//                 right: -10px;
+//             }
 
-            &.active::before {
-                opacity: 1;
-                left: -10px;
-            }
+//             &.active::before {
+//                 opacity: 1;
+//                 left: -10px;
+//             }
 
-            &.active {
-                color: brown;
-            }
-        }
-    }
-}
+//             &.active {
+//                 color: brown;
+//             }
+//         }
+//     }
+// }
 
 main {
     flex-grow: 1;

@@ -7,7 +7,6 @@ const Footer = () => {
             <a href="#">Facebook</a>
             <a href="#">Twitter</a>
             <a href="#">Whatsapp</a>
-            <NavBar/>
         </footer>
     )
 }

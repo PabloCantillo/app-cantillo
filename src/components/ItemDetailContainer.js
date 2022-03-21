@@ -1,55 +1,52 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { toast } from "react-toastify"
-import Contador from "./Contador"
-import Loader from "./Loader"
+import ItemDetail from './ItemDetail'
 
-const ItemDetailContainer = () => {
+const productos =  [ 
+  {id : 1, categoria: "sol" , name: "Ray-Ban D10S", img:"../images/1.jpg", precio: 13000, stock: 7},
+  {id : 2, categoria: "sol" , name: "Vulk Denim", img:"../images/2.jpeg", precio: 10000, stock: 15},
+  {id : 3, categoria: "sol" , name: "Ray-Ban Geisha", img:"../images/3.jpg", precio: 14000, stock: 7},
+  {id : 4, categoria: "receta" , name: "Vulk Trueno", img:"../images/4.jpg", precio: 7000, stock: 11},
+  {id : 5, categoria: "receta" , name: "Carrera Light", img:"../images/5.jpg", precio: 9000, stock: 6},
+  {id : 6, categoria: "receta" , name: "D&G Bella", img:"../images/6.jpg", precio: 10000, stock: 3}
+]
 
-  const [item, setItem] = useState({})
-  const [loading, setLoading] = useState(true)
-  const { id } = useParams()
+const productosPromise = new Promise((resolve,rej)=>{
 
-  useEffect(() => {
-    setTimeout(()=>{
-      const pedido = fetch(`https://dog.ceo/api/breeds/${id}`)
-  
-      pedido
-        .then((respuesta) => {
-          return respuesta.json()
-        })
-        .then((perros) => {
-          setItem(perros)
-        })
-        .catch(() => {
-          toast.error("Hubo un error!")
-        })
-        .finally(() => {
-          setLoading(false)
-        })
-    },3000)
-
+    setTimeout(() => {
+      resolve(productos)
+    }, 3000);
   })
-  
-  if(loading){
-    return <Loader/>
-  }else{
-    return (
-      <div id="detalle">
-        <h2>
-          {item.name}
-          <img src="/adopcion.png" alt="" />
-        </h2>
-        <img src={item.sprites?.other["official-artwork"].front_default} alt="" />
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque rerum porro quia voluptates voluptatem. Beatae, commodi. Ullam qui quis iure, hic quibusdam eaque sequi aperiam sunt harum reprehenderit nostrum repudiandae quia non blanditiis ipsa porro voluptatum consectetur quos asperiores quisquam omnis amet maiores. Obcaecati, cupiditate, quia, laboriosam voluptate labore excepturi voluptatem explicabo et dolorum asperiores iure fugiat placeat culpa soluta ipsam praesentium? Vel, quas nam provident fuga, non tempora odit quis consequatur incidunt repellat corporis reprehenderit quo sapiente. Excepturi sapiente eligendi illum hic cumque. Facilis molestias corrupti a, quasi nesciunt qui amet maiores, unde inventore voluptatem tenetur reiciendis aut dicta.</p>
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam maiores ipsum mollitia nulla, fuga provident doloribus quis quas. Maxime ipsam accusantium a, ex pariatur fuga, saepe nostrum dicta dignissimos in libero, ut corporis accusamus aliquam atque! Id ducimus, cumque voluptas consequatur, earum facilis dolor numquam nihil eaque, ea saepe.
-        </p>
-        {/* <Contador/> */}
-      </div>
+
+export const ItemDetailContainer = () => {
+
+    const [producto, setProducto] = useState([])
+    const [loading, setLoading] = useState(true)
+    const {id} = useParams()
+
+    console.log(id)
+    const getItem = ()=>{
+        return productosPromise
+    }
+
+    useEffect(()=>{
+      getItem()
+        .then((resolve) => {
+          setProducto(resolve.filter(p=> p.id == id))
+          setLoading(false)
+      })
+      
+      .catch(toast.error("Error al intentar cargar los productos"))
+     },[id])
+     console.log(producto)
+
+
+    return(
+        <div>
+            {loading ? <span> Cargando... </span> : <ItemDetail producto={producto}/>}
+        </div>
     )
-  }
 }
 
 export default ItemDetailContainer
