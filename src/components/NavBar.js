@@ -7,7 +7,7 @@ export const NavBar= () => {
     return (
   
       <header>
-         <Navbar bg="primary" expand="lg" variant='dark' >
+         <Navbar bg="primary" expand="lg" variant='light' >
              <Container fluid>
               <Link to="/"><Navbar.Brand>Óptica Cantillo</Navbar.Brand></Link>
                <Navbar.Toggle aria-controls="navbarScroll" />
@@ -15,8 +15,7 @@ export const NavBar= () => {
                  <Nav
                    className="me-auto my-2 my-lg-0"
                    style={{ maxHeight: '100px' }}
-                   navbarScroll
-                 >
+                   navbarScroll>
                    <NavDropdown title="Productos" id="navbarScrollingDropdown">
                     <NavDropdown.Item as={Link} to="/categoria/sol">Sol</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/categoria/receta">Receta</NavDropdown.Item>

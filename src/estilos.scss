@@ -1,4 +1,4 @@
-$colorPrimario: rgb(1, 165, 1) ;
+$colorPrimario: rgb(1, 165, 116) ;
 
 * {
     margin: 1px;
@@ -17,60 +17,6 @@ body,
     flex-direction: column;
 }
 
-// #main-header {
-//     background-color: $colorPrimario;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     padding: 0.5rem 1rem;
-//     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-    
-//     > a  {
-//         color: white;
-//         text-decoration: none;
-//     }
-
-//     nav {
-//         a {
-//             color: white;
-//             text-decoration: none;
-//             margin-left: 1rem;
-
-//             &:before {
-//                 content : "[";
-//                 color: white;
-//                 position: relative;
-//                 left: 10px;
-//                 opacity: 0;
-//                 transition: all 0.5s ease;
-//             }
-
-//             &:after {
-//                 content : "]";
-//                 color: white;
-//                 position: relative;
-//                 right: 10px;
-//                 opacity: 0;
-//                 transition: all 0.5s ease;
-//             }
-
-//             &.active::after {
-//                 opacity: 1;
-//                 right: -10px;
-//             }
-
-//             &.active::before {
-//                 opacity: 1;
-//                 left: -10px;
-//             }
-
-//             &.active {
-//                 color: brown;
-//             }
-//         }
-//     }
-// }
 
 main {
     flex-grow: 1;
@@ -153,7 +99,13 @@ footer {
     background-color: $colorPrimario;
     padding: 0.5rem;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 1em;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+    padding: 2px;
 }
 
 #loader {
@@ -169,3 +121,24 @@ footer {
         transform: rotate(360deg) scale(0.5);
     }
 }
+
+
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.cardList{
+    display:inline-flex;
+    width: 100%;
+    padding: 1rem;
+    margin: 6px 6px 6px 6px;
+    text-align: center;
+    background-color: white;
+    justify-content: center;
+}
+
+button{
+    margin: 5px 5px 5px 5px;
+}
+
