@@ -3,9 +3,11 @@ import { toast } from "react-toastify";
 import { Link  } from "react-router-dom";
 import {Button} from "react-bootstrap";
 import {useState} from "react";
+import { cartContext } from '../context/CartContext'
 
 const ItemDetail = ({producto}) => {
 
+    const {addItem} = useContext(cartContext);
     const [select, setSelect] = useState(false);
  
     const onAdd = (unidad) => {
