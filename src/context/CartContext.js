@@ -1,61 +1,51 @@
-import React, { useEffect, useState } from 'react'
+import { createContext, useState } from "react";
 
-export const cartContext = React.createContext()
+export const CartContext = createContext();
 
-export const CartContext = ({children}) => {
+export const CartContextProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
 
-    const {Provider} = cartContext
-    const [cart, setCart] = useState([])
-    const [total, setTotal] = useState(0)
-    let cartProductAux = []
-
-
-    useEffect(()=>{
-      checkTotal()
-    },[cart])
-
-    const addItem = (item,quantity)=>{
-      let cartProduct = {item,quantity};
-      if(isInCart(item)){
-        cartProduct = cart.find(p => p.item.id === item.id)
-        cartProduct.quantity = cartProduct.quantity + quantity;
-        cartProductAux = [...cart]
-      }else{
-         cartProductAux = [...cart,cartProduct]
-      }
-        setCart(cartProductAux)
+  const addItem = (product, count) => {
+    let cartProduct = {product, count}
+    console.log("cartProduct", cartProduct);
+    let cartAux = [];
+    if (isInCart(product)) {
+      cartProduct = cart.find(item => item.product.id === product.id);
+      cartProduct.count = cartProduct.count + count;
+      cartAux = [...cart];
+      console.log('cartProduct:isInCart:true', cartProduct);
+    } else {
+      cartAux = [cartProduct, ...cart];
     }
+    return setCart(cartAux);
+  };
 
-    const removeItem = (id)=>{
-      cartProductAux = cart.filter(p => p.item.id !== id )
-      console.log(cartProductAux)
-      setCart(cartProductAux)
+  const removeItem = (product) => {
+    if (isInCart(product)) {
+      console.log("removeItem(): está en el carrito");
+      const cartAux = cart.filter(item => item.product !== product);
+      setCart(cartAux);
     }
+  };
 
-    const clear= ()=>{
-      setCart([])
-    }
+  const clear = () => {
+    setCart([]);
+  };
 
-    const checkTotal = ()=>{
+  const isInCart = (product) => {
+    return cart && cart.some(item => item.product.id === product.id);
+  }
 
-      let totalAux = 0;
-
-       cart.map(p => {
-        totalAux = p.item.precio * p.quantity
-      })
-      setTotal(totalAux)
-
-    }
-    const isInCart = (item)=>{
-      const result = cart.some(p => p.item.id == item.id)
-
-      return result
-    }
   return (
-    <Provider value={{cart,addItem,clear,removeItem,total}}>
-        {children}
-    </Provider>
-  )
-}
-
-export default CartContext
+    <CartContext.Provider
+      value={{
+        addItem,
+        removeItem,
+        clear,
+        cart
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};

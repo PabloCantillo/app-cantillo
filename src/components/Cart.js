@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { cartContext } from '../context/CartContext'
+import {Button} from "react-bootstrap";
+import "./estilosComponentes.scss"
 
 export const Cart = () => {
 
@@ -8,37 +10,35 @@ export const Cart = () => {
     console.log(cart)
     return (
         <div className='cart'>
-            <h1>Shopping Cart</h1>
+            <h2>Detalle del pedido</h2>
             {
                 cart.length > 0 ?
                 <ul>
                    { cart.map(item => {
-                      return <li>
+                      return <li className='cartcontainer'>
                           <div>
-                            <p>{item.item.nombre}</p>
-                            <p>$ {item.item.precio}</p>
+                            <p className='cartnombre'>{item.item.name}</p>
+                            <p className='caracteristicas'>$ {item.item.precio}</p>
                           </div>
                             <div>
-                                <p>Cantidad: {item.quantity}</p>
-                                <button onClick={()=> removeItem(item.item.id)}>Eliminar</button>
+                                <p className='caracteristicas'>Cantidad: {item.quantity}</p>
+                                <Button variant='danger' onClick={()=> removeItem(item.item.id)}>Eliminar</Button>
                             </div>
                         </li>
                     })}
                     <div>
                         <div>
-                            <p>Total</p>
-                            <p> ${total} </p>
+                            <p className='caracteristicas'>TOTAL: ${total} </p>
                         </div>
-                        <p>Generar orden</p>
-                        <Link to="/">
-                            <p>o Continuar Comprando</p> 
-                        </Link>
+                        <Button variant='success'>Generar orden</Button>
+                        <Button variant='primary' as={Link} to="/"> Continuar comprando</Button>
+        
                     </div>
                 </ul>
                 :
-                <div className='cart_vacio'>
+                <div className='caracteristicas'>
                      <p>No se registra productos seleccionados</p>
-                     <Link to="/">Volver al home</Link>
+                     <Link className='acomodar' to="/" >Volver al home</Link>
 
                 </div>
                 
@@ -48,3 +48,4 @@ export const Cart = () => {
 }
 
 export default Cart
+

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import {Button} from "react-bootstrap";
+import "./estilosComponentes.scss"
 
 
     const ItemCount = (props) => {

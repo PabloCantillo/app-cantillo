@@ -5,14 +5,14 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import { ToastContainer } from "react-toastify"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./components/Cart"
-import  CartContext from './context/CartContext';
+import  { CartContextProvider } from './context/CartContext';
 
 
 function App() {
     return (
         <BrowserRouter>
             <NavBar/>
-            <CartContext>
+            <CartContextProvider>
             <Routes>
                 <Route path='/' element={<ItemListContainer/>} />
                 <Route path='/categoria/:categoria' element={<ItemListContainer/>} />
@@ -20,7 +20,7 @@ function App() {
                 <Route path='/cart' element={<Cart/>} />
             </Routes>
             <Footer/>
-            </CartContext>
+            </CartContextProvider>
             <ToastContainer/>
         </BrowserRouter>
     );
