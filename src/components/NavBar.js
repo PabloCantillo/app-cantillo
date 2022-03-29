@@ -19,6 +19,7 @@ export const NavBar= () => {
                    <NavDropdown title="Productos" id="navbarScrollingDropdown">
                     <NavDropdown.Item as={Link} to="/categoria/sol">Sol</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/categoria/receta">Receta</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/categoria/contacto">Lentes de Contacto</NavDropdown.Item>
                    </NavDropdown>
                  </Nav>
                     <CartWidget/>
