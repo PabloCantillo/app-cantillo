@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;   
+}
+
+.redSocial{
+    color: white;
+    text-align: center; 
+    padding:4rem ;
+}
+
+.color1{
+    background-color: rgb(27, 27, 27);
+}
+
+.list{
+    display:inline;
+    float: left;
+    color: black;
+    padding: 2rem;
+    margin: 1rem;
+}
+
+.pago{
+    display:inline;
+    float: right;
+    color: black;
+    padding: 2rem;
+    margin: 1rem;
+}

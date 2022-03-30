@@ -1,7 +1,6 @@
 import { useState } from "react"
 import {Button} from "react-bootstrap";
-import "./estilosComponentes.scss"
-
+import './ItemCount.css';
 
     const ItemCount = (props) => {
 
@@ -29,7 +28,7 @@ import "./estilosComponentes.scss"
         return (
             <div>
                 <h3>{props.name}</h3>
-                <h6>Nuestro stock es: {props.stock}</h6>
+                <h6>Stock disponible: {props.stock}</h6>
                 <Button variant="success" onClick={sumar}>+</Button>{' '}
                 <span init={props.init}>{contador}</span>
                 <Button variant="danger" onClick={restar}>-</Button>

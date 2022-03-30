@@ -1,10 +1,13 @@
 import React from 'react'
 import {Card} from "react-bootstrap";
 import {Button} from "react-bootstrap";
+import './Item.css';
 import { Link } from 'react-router-dom';
 
 const Item = ({productosInicial}) => {
+  console.log(productosInicial)
     return (
+        
             <Card className="cardList" style={{ width: '15rem' }}>
                 <Card.Img variant="top" src={productosInicial.img} />
                 <Card.Body>
@@ -19,4 +22,4 @@ const Item = ({productosInicial}) => {
     )
 }
 
-export default Item
+export default Item;
