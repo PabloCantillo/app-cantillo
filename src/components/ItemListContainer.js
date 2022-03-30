@@ -4,15 +4,21 @@ import { toast } from "react-toastify"
 import ItemList from "./ItemList"
 
 let productosInicial = [
-    {id : 1, categoria: "sol" , name: "Ray-Ban D10S", img:"../images/1.jpg", precio: 13000, stock: 7},
-    {id : 2, categoria: "sol" , name: "Vulk Denim", img:"../images/2.jpeg", precio: 10000, stock: 15},
-    {id : 3, categoria: "sol" , name: "Ray-Ban Geisha", img:"../images/3.jpg", precio: 14000, stock: 7},
-    {id : 4, categoria: "receta" , name: "Vulk Trueno", img:"../images/4.jpg", precio: 7000, stock: 11},
-    {id : 5, categoria: "receta" , name: "Carrera Light", img:"../images/5.jpg", precio: 9000, stock: 6},
-    {id : 6, categoria: "receta" , name: "D&G Bella", img:"../images/6.jpg", precio: 10000, stock: 3},
-    {id : 7, categoria: "contacto" , name: "Acuvue Oasys with Hydraclear", img:"../images/7.jpg", precio: 6000, stock: 7},
-    {id : 8, categoria: "contacto" , name: "Acuvue Moist", img:"../images/8.jpeg", precio: 4000, stock: 15},
-    {id : 9, categoria: "contacto" , name: "Acuvue Oasys with Hydraluxe", img:"../images/9.jpg", precio: 5500, stock: 7},
+  {id : 1, categoria: "sol" , name: "Ray-Ban Clubmaster", img:"./images/Clubmaster.jpg", precio: 29000, stock: 7},
+  {id : 2, categoria: "sol" , name: "Ray-Ban Round", img:"./images/Round.jpeg", precio: 21900, stock: 15},
+  {id : 3, categoria: "sol" , name: "Ray-Ban Wayfarer", img:"./images/wayfarer.jpg", precio: 22900, stock: 7},
+  {id : 4, categoria: "sol" , name: "Paula Cahen D'anvers Sitges", img:"./images/Sitges.jpeg", precio: 6500, stock: 15},
+  {id : 5, categoria: "sol" , name: "Paula Cahen D'anvers Tripoli", img:"./images/Tripoli.jpg", precio: 7000, stock: 7},
+  {id : 6, categoria: "receta" , name: "Vulk Brow", img:"./images/Brow.jpg", precio: 8500, stock: 11},
+  {id : 7, categoria: "receta" , name: "Vulk Degre", img:"./images/Degre3.jpg", precio: 8300, stock: 6},
+  {id : 8, categoria: "receta" , name: "Vulk Ruga", img:"./images/Ruga.jpg", precio: 8400, stock: 3},
+  {id : 9, categoria: "receta" , name: "Rusty Ther", img:"./images/Ther.jpg", precio: 10100, stock: 6},
+  {id : 10, categoria: "receta" , name: "Rusty Zinz", img:"./images/Zinz.jpg", precio: 8200, stock: 3},
+  {id : 11, categoria: "contacto" , name: "Acuvue Oasys with Hydraclear", img:"./images/acuvueoasys.jpg", precio: 6000, stock: 7},
+  {id : 12, categoria: "contacto" , name: "Acuvue Vita", img:"./images/acuvuevita.jpeg", precio: 4500, stock: 15},
+  {id : 13, categoria: "contacto" , name: "Bausch & Lomb Soflens Astigmatismo", img:"./images/Astigmatismosoft.jpg", precio: 7900, stock: 7},
+  {id : 14, categoria: "contacto" , name: "Bausch & Lomb Soflens Multifocal", img:"./images/multisoft.jpg", precio: 9900, stock: 15},
+  {id : 15, categoria: "contacto" , name: "Bausch & Lomb Soflens Starcolors", img:"./images/starcolors.jpg", precio: 5000, stock: 7},
 ]
 
 const productoPromise = new Promise((resolve,rej)=>{
@@ -27,7 +33,6 @@ const productoPromise = new Promise((resolve,rej)=>{
     const {loading, setLoading} = useState([false])
     const [productos, setProductos] = useState([])
     const {categoria} = useParams()
-    console.log(categoria)
 
     useEffect(()=>{
         if(categoria){
