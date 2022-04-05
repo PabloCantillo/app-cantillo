@@ -30,4 +30,4 @@ export const Barradenavegacion = () => {
   )
 }
 
-export default Barradenavegacion ;
+export default Barradenavegacion;
