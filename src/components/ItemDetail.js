@@ -35,8 +35,10 @@ const ItemDetail = ({producto}) => {
         <img src={producto.img} alt=""></img>
         <div className='descripcion'>
           <p className='nombre'>{producto.name}</p>
-          <p className='material'>{producto.material}</p>
           <p className='color'>{producto.color}</p>
+          <p className='forma'>{producto.forma}</p>
+          <p className='material'>{producto.material}</p>
+          <p className='tipo'>{producto.tipo}</p>
           <p className='precio'>${producto.precio}</p>
           {select ? (
               <Button variant="primary" as={Link} to="/Cart">Ir al carrito</Button>
