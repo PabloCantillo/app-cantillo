@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    width: 42%;
+    height: 25%;
+    display: inline-block;
+    text-align: left;
+}
+ 
+.descripcion{
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+    
+}
+
+.centrarproducto{
+    text-align: center;
+}
+
+.nombre{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.precio{
+    font-weight: bold;
+    font-size: 1rem;
+}

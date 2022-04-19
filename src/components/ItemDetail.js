@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link  } from "react-router-dom";
 import {Button} from "react-bootstrap";
 import {useState} from "react";
+import "./ItemDetail.css"
 
 const ItemDetail = ({producto}) => {
 
@@ -31,7 +32,7 @@ const ItemDetail = ({producto}) => {
 
   return (
       <div className='centrarproducto'>
-        <img src={producto.img}></img>
+        <img src={producto.img} alt=""></img>
         <div className='descripcion'>
           <p className='nombre'>{producto.name}</p>
           <p className='precio'>${producto.precio}</p>
