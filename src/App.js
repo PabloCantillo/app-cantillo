@@ -7,6 +7,8 @@ import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from './components/Cart';
 import  CartContext from './context/CartContext';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
             <Route path='/cart' element={<Cart/>} />
           </Routes>
         <Footer/>
+        <ToastContainer/>
       </CartContext>
     </BrowserRouter>
   );

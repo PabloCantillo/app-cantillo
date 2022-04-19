@@ -13,6 +13,3 @@ function CartWidget() {
   }
 
 export default CartWidget
-
-// import { BiCart } from "react-icons/bi";
-// <h1><BiCart id="cartIcon"/>{cart.length}</h1>
