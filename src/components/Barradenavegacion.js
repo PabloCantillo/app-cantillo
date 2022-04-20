@@ -7,7 +7,7 @@ export const Barradenavegacion = () => {
   return (
 
     <header>
-       <Navbar bg="light" expand="lg" variant='light' >
+       <Navbar bg="light" variant='light' >
            <Container fluid>
             <Link to="/"><Navbar.Brand>Óptica Cantillo</Navbar.Brand></Link>
              <Navbar.Toggle aria-controls="navbarScroll" />
