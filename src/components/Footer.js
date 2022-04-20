@@ -13,10 +13,10 @@ const Footer = () => {
                <div className='redSocial'>
                   <h2><GrInstagram/> optica_cantillo</h2>
                   <p>Visitanos en nuestras redes</p>
-                  <Button variant="light" size="lg" active><a href='https://www.instagram.com/' rel="noopener noreferrer" target="_blank">Siguenos</a></Button>
-                  <Button variant="light" size="lg" active><a href='https://www.facebook.com/' rel="noopener noreferrer" target="_blank">Siguenos</a></Button>
-                  <Button variant="light" size="lg" active><a href='https://www.whatsapp.com/' rel="noopener noreferrer" target="_blank">Siguenos</a></Button>
-                  <Button variant="light" size="lg" active><a href='https://www.gmail.com/' rel="noopener noreferrer" target="_blank">Siguenos</a></Button>
+                  <Button variant="light" size="lg" active><a href='https://www.instagram.com/' rel="noopener noreferrer" target="_blank">Instagram</a></Button>
+                  <Button variant="light" size="lg" active><a href='https://www.facebook.com/' rel="noopener noreferrer" target="_blank">Facebook</a></Button>
+                  <Button variant="light" size="lg" active><a href='https://www.whatsapp.com/' rel="noopener noreferrer" target="_blank">Whatsapp</a></Button>
+                  <Button variant="light" size="lg" active><a href='https://www.gmail.com/' rel="noopener noreferrer" target="_blank">Gmail</a></Button>
                </div>
             </div>
         </footer>
