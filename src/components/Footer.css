@@ -7,16 +7,17 @@
     color: white;
     text-align: center; 
     padding:4rem ;
+    text-decoration: none;
 }
 
 .color1{
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(60, 134, 168);
 }
 
 .list{
     display:inline;
     float: left;
-    color: black;
+    color: rgb(114, 113, 113);
     padding: 2rem;
     margin: 1rem;
 }
@@ -27,4 +28,5 @@
     color: black;
     padding: 2rem;
     margin: 1rem;
+    
 }
