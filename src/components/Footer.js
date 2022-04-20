@@ -14,15 +14,10 @@ const Footer = () => {
                   <h2><GrInstagram/> optica_cantillo</h2>
                   <p>Visitanos en nuestras redes</p>
                   <Button variant="light" size="lg" active><a href='https://www.instagram.com/' rel="noopener noreferrer" target="_blank">Siguenos</a></Button>
+                  <Button variant="light" size="lg" active><a href='https://www.facebook.com/' rel="noopener noreferrer" target="_blank">Siguenos</a></Button>
+                  <Button variant="light" size="lg" active><a href='https://www.whatsapp.com/' rel="noopener noreferrer" target="_blank">Siguenos</a></Button>
+                  <Button variant="light" size="lg" active><a href='https://www.gmail.com/' rel="noopener noreferrer" target="_blank">Siguenos</a></Button>
                </div>
-                <div>
-                    <h3><b>Nuestras redes</b></h3>
-                    <ListGroup vertical>
-                        <ListGroup.Item><a href='https://www.facebook.com/' rel="noopener noreferrer" target="_blank"><AiOutlineFacebook/></a></ListGroup.Item>
-                        <ListGroup.Item><a href='https://www.whatsapp.com/' rel="noopener noreferrer" target="_blank"><ImWhatsapp/></a></ListGroup.Item>
-                        <ListGroup.Item><a href='https://www.gmail.com/' rel="noopener noreferrer" target="_blank"><FiMail/></a></ListGroup.Item>
-                    </ListGroup>
-                </div>
             </div>
         </footer>
     )
