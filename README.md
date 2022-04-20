@@ -1,4 +1,4 @@
-# Project Information
+# Información del proyecto que realice:
 
 ## En que consiste mi proyecto: 
 Mi proyecto es la idea para realizar una aplicación de un e-commerce de una óptica imaginaria debido a que mi carrera anterior fue óptica y contactologia. Lo realice usando React Js y liberias de Javascript.

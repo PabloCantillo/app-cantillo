@@ -13,7 +13,7 @@ const Footer = () => {
                <div className='redSocial'>
                   <h2><GrInstagram/> optica_cantillo</h2>
                   <p>Visitanos en nuestras redes</p>
-                  <Button variant="secondary" size="lg" active><a href='https://www.instagram.com/' rel="noopener noreferrer" target="_blank">Siguenos</a></Button>
+                  <Button variant="light" size="lg" active><a href='https://www.instagram.com/' rel="noopener noreferrer" target="_blank">Siguenos</a></Button>
                </div>
                 <div>
                     <h3><b>Nuestras redes</b></h3>
