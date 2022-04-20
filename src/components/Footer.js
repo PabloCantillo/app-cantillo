@@ -17,10 +17,10 @@ const Footer = () => {
                </div>
                 <div>
                     <h3><b>Nuestras redes</b></h3>
-                    <ListGroup horizontal>
-                        <ListGroup.Item><a href=''><AiOutlineFacebook/></a></ListGroup.Item>
-                        <ListGroup.Item><a href=''><ImWhatsapp/></a></ListGroup.Item>
-                        <ListGroup.Item><a href=''><FiMail/></a></ListGroup.Item>
+                    <ListGroup vertical>
+                        <ListGroup.Item><a href='https://www.facebook.com/' rel="noopener noreferrer" target="_blank"><AiOutlineFacebook/></a></ListGroup.Item>
+                        <ListGroup.Item><a href='https://www.whatsapp.com/' rel="noopener noreferrer" target="_blank"><ImWhatsapp/></a></ListGroup.Item>
+                        <ListGroup.Item><a href='https://www.gmail.com/' rel="noopener noreferrer" target="_blank"><FiMail/></a></ListGroup.Item>
                     </ListGroup>
                 </div>
             </div>
