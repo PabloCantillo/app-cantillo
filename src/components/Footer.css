@@ -17,16 +17,7 @@
 .list{
     display:inline;
     float: left;
-    color: rgb(114, 113, 113);
+    color: rgb(60, 134, 168);
     padding: 2rem;
     margin: 1rem;
-}
-
-.pago{
-    display:inline;
-    float: right;
-    color: black;
-    padding: 2rem;
-    margin: 1rem;
-    
 }
